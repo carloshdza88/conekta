@@ -8,7 +8,7 @@ module Api
                
                 wallets = Wallet.all
 
-                render json: { status: 'succes', message: 'show wallets' , data: wallets } ,status: :ok
+                render json: { status: 'succes', message: 'show wallets' , wallet: wallets } ,status: :ok
 
             end
             
@@ -65,7 +65,7 @@ module Api
                                        deposito: wallet_actual.fondo,
                                        retiro: 0, saldo: wallet_actual.fondo)
                     
-                    render json: { status: 'Succes.' , message: 'wallet and customer created', data: wallet_actual ,  cliente: nuevo_cliente , gateway: obj_json }, status: :ok                
+                    render json: { status: 'Succes.' , message: 'wallet and customer created', wallet: wallet_actual ,  cliente: nuevo_cliente , gateway: obj_json }, status: :ok                
          
                 else
                     render json: { status: 'Not succes.' , message: 'Error '  }, status: :ok                   
